@@ -1,57 +1,34 @@
 #include "UserInput.h"
 
-    
-	
-	
-	void UserInput::PlayerInput(sf::Sprite& player)
+
+
+
+
+void UserInput::PlayerInput(sf::Sprite& player, sf::Event& ev)
+{
+	playerSpeed = 6.0f;
+	switch (ev.key.code)
 	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
-		{
-			player.move(-6.0f, 0.0f);
-			std::cout << "Left is pressed!" << std::endl;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
-		{
-			wasKeyPressed = true;
-			player.move(6.0f, 0.0f);
-			std::cout << "Right is pressed!" << std::endl;
-			if (sf::Event::KeyReleased && wasKeyPressed == true)
-			{
-				wasKeyPressed = false;
-			}
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
-		{
-			player.move(0.0f, -6.0f);
-			std::cout << "Up is pressed!" << std::endl;
-		}
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
-		{
-			player.move(0.0f, 6.0f);
-			std::cout << "Down is pressed!" << std::endl;
-		}
-		
-		{
-			
-		}
+	case sf::Keyboard::Left:
+		player.move(-playerSpeed, 0.0f);
+		std::cout << "Left is pressed!" << std::endl;
+		break;
+	case sf::Keyboard::Right:
+		player.move(playerSpeed, 0.0f);
+		std::cout << "Right is pressed!" << std::endl;
+		break;
+	case sf::Keyboard::Up:
+		player.move(0.0f, -playerSpeed);
+		std::cout << "Up is pressed!" << std::endl;
+		break;
+	case sf::Keyboard::Down:
+		player.move(0.0f, playerSpeed);
+		std::cout << "Down is pressed!" << std::endl;
+		break;
 	}
-	//Slow down the player
-	void UserInput::SlowDown(float speed, sf::Sprite& spr)
-	{
-		for (float i = speed; i >= 0; i--)
-		{
-			if (i > 0 && wasKeyPressed)
-			{
-				speed == i;
-				spr.move(6.0f, 0.0f);
-			}
-			else
-			{
-				wasKeyPressed = false;
-				break;
-			}
-		}
-	}
+
+}
+
 
 
 

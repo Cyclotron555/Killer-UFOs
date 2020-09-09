@@ -24,6 +24,9 @@
     <ClCompile Include="ObjectSetter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CreateRectangleFixture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UserInput.h">
@@ -32,5 +35,11 @@
     <ClInclude Include="ObjectSetter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CreateRectangleFixture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

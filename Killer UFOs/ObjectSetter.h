@@ -7,6 +7,7 @@
 class ObjectSetter
 {
 public:
-	void SetObjectOrigin(sf::Sprite& sprite);
+	void CenterSpriteOrigin(sf::Sprite& sprite);
+	void ChangeSpriteOrigin(sf::Sprite& sprite, float originX, float originY);
 };
 
